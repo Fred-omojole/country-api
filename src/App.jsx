@@ -9,10 +9,10 @@ function App() {
       <Header />
       <Field />
       <Countries />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Field />} />
         <Route path="/countries" element={<Countries />} />
-      </Routes> */}
+      </Routes>
     </Router>
   );
 }
