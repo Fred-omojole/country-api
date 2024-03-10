@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+img{
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif; 
+    
+    background-color: rgb(30 41 59)
+}
+
+/* @layer base {
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400, 600;
+      font-display: swap;
+      src: url(/fonts/Roboto.woff2) format('woff2');
+    }
+  } */
+
+ 
