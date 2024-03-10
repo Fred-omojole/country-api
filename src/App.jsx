@@ -1,14 +1,19 @@
-import Field from "./components/hero";
-import Country from "./components/countries";
 import Header from "./components/header";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Field from "./components/hero";
+import Countries from "./components/countries";
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
       <Field />
-      <Country />
-    </>
+      <Countries />
+      {/* <Routes>
+        <Route path="/" element={<Field />} />
+        <Route path="/countries" element={<Countries />} />
+      </Routes> */}
+    </Router>
   );
 }
 

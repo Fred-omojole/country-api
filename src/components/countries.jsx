@@ -2,14 +2,21 @@ import { useState, useEffect } from "react";
 
 const url = "https://restcountries.com/v3.1/all";
 
-const Country = () => {
+const Countries = () => {
   const [countries, setCountries] = useState([]);
 
   const fetchCountryData = async () => {
-    const response = await fetch(url);
-    const countries = await response.json();
-    setCountries(countries);
-    console.log(countries);
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Failed to fetch country data");
+      }
+      const countries = await response.json();
+      setCountries(countries);
+      console.log(countries);
+    } catch (error) {
+      console.error("Error fetching country data:", error);
+    }
   };
 
   useEffect(() => {
@@ -55,4 +62,4 @@ const Country = () => {
   );
 };
 
-export default Country;
+export default Countries;

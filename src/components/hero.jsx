@@ -10,15 +10,15 @@ import {
 
 const Field = () => {
   return (
-    <section className=" p-5  lg:flex lg:items-center lg:justify-between">
+    <section className=" p-5  lg:flex lg:items-center lg:justify-between ">
       <div>
         <Input
           placeholder=" Search for country..."
-          className=" w-[400px]  p-5 m-4 mb-20 mx-auto  bg-gray-700 text-black font-semibold border-none hover:bg-gray-700"
+          className=" w-[400px]  p-5 m-4 mb-10 mx-auto  bg-gray-700 text-black font-semibold border-none hover:bg-gray-700"
           prefix={<SearchIcon className="text-black mx-2" />}
         />
       </div>
-      <div>
+      <div className="mb-6">
         <Select className="">
           <SelectTrigger className="w-[300px] bg-gray-700 border-none ">
             <SelectValue placeholder="Filter by Region" />
