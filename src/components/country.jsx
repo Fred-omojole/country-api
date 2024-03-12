@@ -1,5 +1,5 @@
 const Country = () => {
-  return <div>Country</div>;
+  return <div>Country data</div>;
 };
 
 export default Country;

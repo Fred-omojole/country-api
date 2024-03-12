@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const url = "https://restcountries.com/v3.1/all";
 
@@ -22,6 +23,11 @@ const Countries = () => {
   useEffect(() => {
     fetchCountryData();
   }, []);
+
+  const removeCountry = (cca3) => {
+    const newCountries = countries.filter((country) => country.cca3 !== cca3);
+    setCountries(newCountries);
+  };
 
   return (
     <>
@@ -53,6 +59,20 @@ const Countries = () => {
                   Capital:{" "}
                   <span className="text-sm text-gray-400">{capital}</span>
                 </h4>
+                <div className="flex justify-between text-sm text-slate-400 ">
+                  <Link
+                    className="bg-slate-700 py-2 hover:font-bold"
+                    to={`/countries/${name}`}
+                  >
+                    Learn more
+                  </Link>
+                  <button
+                    className="bg-slate-700 py-2 hover:font-bold"
+                    onClick={() => removeCountry(cca3)}
+                  >
+                    Remove Country
+                  </button>
+                </div>
               </div>
             </article>
           );

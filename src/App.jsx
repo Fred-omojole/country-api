@@ -1,19 +1,22 @@
 import Header from "./components/header";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Field from "./components/hero";
+import { Routes, Route } from "react-router-dom";
+// import Field from "./components/hero";
 import Countries from "./components/countries";
+import Country from "./components/country";
+import Layout from "./components/layout";
 
 function App() {
   return (
-    <Router>
+    <>
       <Header />
-      <Field />
-      <Countries />
+
       <Routes>
-        <Route path="/" element={<Field />} />
-        <Route path="/countries" element={<Countries />} />
+        <Route exact path="/" element={<Layout />}>
+          <Route index element={<Countries />} />
+        </Route>
+        <Route path="/countries/:name" element={<Country />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
