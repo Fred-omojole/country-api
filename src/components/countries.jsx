@@ -61,13 +61,13 @@ const Countries = () => {
                 </h4>
                 <div className="flex justify-between text-sm text-slate-400 ">
                   <Link
-                    className="bg-slate-700 py-2 hover:font-bold"
+                    className="bg-slate-700 py-2 hover:font-bold cursor-pointer"
                     to={`/countries/${name}`}
                   >
                     Learn more
                   </Link>
                   <button
-                    className="bg-slate-700 py-2 hover:font-bold"
+                    className="bg-slate-700 py-2 hover:font-bold cursor-pointer"
                     onClick={() => removeCountry(cca3)}
                   >
                     Remove Country
