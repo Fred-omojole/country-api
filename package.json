@@ -15,6 +15,7 @@
     "@mui/icons-material": "^5.15.12",
     "@mui/material": "^5.15.12",
     "@radix-ui/react-select": "^2.0.0",
+    "@vercel/speed-insights": "^1.0.10",
     "antd": "^5.15.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
