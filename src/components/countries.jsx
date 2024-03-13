@@ -6,21 +6,22 @@ const url = "https://restcountries.com/v3.1/all";
 const Countries = () => {
   const [countries, setCountries] = useState([]);
 
-  const fetchCountryData = async () => {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error("Failed to fetch country data");
-      }
-      const countries = await response.json();
-      setCountries(countries);
-      console.log(countries);
-    } catch (error) {
-      console.error("Error fetching country data:", error);
-    }
-  };
+  
 
   useEffect(() => {
+    const fetchCountryData = async () => {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Failed to fetch country data");
+        }
+        const countries = await response.json();
+        setCountries(countries);
+        
+      } catch (error) {
+        console.error("Error fetching country data:", error);
+      }
+    };
     fetchCountryData();
   }, []);
 
@@ -31,7 +32,7 @@ const Countries = () => {
 
   return (
     <>
-      <section className=" dark font-serif grid grid-cols-1 gap-[60px]  px-10 text-white bg-slate-200 dark:bg-slate-700  lg:grid-cols-4 lg:px-[100] lg:py-[50] md:grid-cols-3 sm:grid-cols-2">
+     {countries.length === 0 ? <h1 className=" text-slate-600 dark:text-white p-40 inset-y-1/2 items-center tracking-wide flex justify-center text-center font-bold text-2xl uppercase" > loading...</h1> :  <section className="  font-serif grid grid-cols-1 gap-[60px]  px-10 text-white bg-slate-200 dark:bg-slate-700  lg:grid-cols-4 lg:px-[100] lg:py-[50] md:grid-cols-3 sm:grid-cols-2">
         {countries.map((country) => {
           const { cca3, name, population, region, capital, flags } = country;
           const flagUrl = flags.png;
@@ -62,7 +63,7 @@ const Countries = () => {
                 <div className="flex justify-between  text-slate-700 dark:text-gray-200">
                   <Link
                     className=" text-sm py-2 hover:font-bold cursor-pointer"
-                    to={`/countries/${name}`}
+                    to={`/countries/${name.common}`}
                   >
                     Learn More
                   </Link>
@@ -78,7 +79,7 @@ const Countries = () => {
             </article>
           );
         })}
-      </section>
+      </section> }
     </>
   );
 };
