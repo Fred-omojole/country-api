@@ -21,8 +21,14 @@ const {name} = useParams();
 fetchCountryData()
     },[name])
   return<>
-  <Link className="m-10 bg-slate-700 p-4 rounded-md text-white" to = '/'><ArrowLeft/><span>Back</span></Link>
+  <section className=" bg-[#d1d5db] dark:bg-slate-700 h-screen">
 
+ 
+
+<Link className=" absolute mt-10 m-5 p-4 rounded-md bg-slate-700 text-[#d1d5db] dark:text-white" to = '/'><ArrowLeft/><span className="">Back</span></Link>
+
+
+  </section>
     
   </> ;
 };

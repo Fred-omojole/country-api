@@ -31,7 +31,7 @@ const Countries = () => {
 
   return (
     <>
-      <section className=" dark font-serif grid grid-cols-1 gap-[60px]  px-10 text-white bg-slate-200   lg:grid-cols-4 lg:px-[100] lg:py-[50] md:grid-cols-3 sm:grid-cols-2">
+      <section className=" dark font-serif grid grid-cols-1 gap-[60px]  px-10 text-white bg-slate-200 dark:bg-slate-700  lg:grid-cols-4 lg:px-[100] lg:py-[50] md:grid-cols-3 sm:grid-cols-2">
         {countries.map((country) => {
           const { cca3, name, population, region, capital, flags } = country;
           const flagUrl = flags.png;
