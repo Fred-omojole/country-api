@@ -31,43 +31,44 @@ const Countries = () => {
 
   return (
     <>
-      <section className="font-serif grid grid-cols-1 gap-[60px] px-10 text-white lg:grid-cols-4 lg:px-[100] lg:py-[50] md:grid-cols-3 sm:grid-cols-2">
+      <section className=" dark font-serif grid grid-cols-1 gap-[60px]  px-10 text-white bg-slate-200   lg:grid-cols-4 lg:px-[100] lg:py-[50] md:grid-cols-3 sm:grid-cols-2">
         {countries.map((country) => {
           const { cca3, name, population, region, capital, flags } = country;
           const flagUrl = flags.png;
           return (
-            <article key={cca3}>
-              <div className="image-container" style={{ height: "200px" }}>
+            <article className=" dark hover:scale-105 ease-in-out " key={cca3}>
+              <div className="image-container  " style={{ height: "200px" }}>
                 <img
                   className=" rounded-t-lg h-full w-full object-cover"
                   src={flagUrl}
                   alt={name.common}
                 />
               </div>
-              <div className="bg-slate-700 p-4 rounded-b-lg flex flex-col flex-grow">
-                <h3 className="text-lg font-semibold pb-3">{name.common}</h3>
-                <div className="flex-grow"></div>
+              <div className="bg-[#d1d5db] drop-shadow-lg text-black dark:text-white dark:bg-slate-700 p-4 rounded-b-lg flex flex-col flex-grow">
+                <h3 className="text-lg  font-semibold pb-3">{name.common}</h3>
+                
                 <h4>
                   Population:{" "}
-                  <span className="text-sm text-gray-400">{population}</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-200">{population}</span>
                 </h4>
                 <h4>
                   Region:{" "}
-                  <span className="text-sm text-gray-400">{region}</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-200">{region}</span>
                 </h4>
                 <h4>
                   Capital:{" "}
-                  <span className="text-sm text-gray-400">{capital}</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-200">{capital}</span>
                 </h4>
-                <div className="flex justify-between  text-slate-400 ">
+                <div className="flex justify-between  text-slate-700 dark:text-gray-200">
                   <Link
-                    className="bg-slate-700 text-sm py-2 hover:font-bold cursor-pointer"
+                    className=" text-sm py-2 hover:font-bold cursor-pointer"
                     to={`/countries/${name}`}
                   >
                     Learn More
                   </Link>
                   <button
-                    className="bg-slate-700 py-2 text-sm hover:font-bold cursor-pointer"
+                  // bg-[#d1d5db]
+                    className="  py-2 text-sm hover:font-bold cursor-pointer"
                     onClick={() => removeCountry(cca3)}
                   >
                     Remove Country
