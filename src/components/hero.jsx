@@ -26,7 +26,7 @@ const Field = () => {
               placeholder="Filter by Region"
             />
           </SelectTrigger>
-          <SelectContent className="bg-slate-200 dark:bg-slate-600 border-none">
+          <SelectContent className="bg-slate-200 dark:bg-slate-700 border-none">
             <SelectItem value="africa">Africa</SelectItem>
             <SelectItem value="america">America</SelectItem>
             <SelectItem value="asia">Asia</SelectItem>
