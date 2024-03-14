@@ -86,18 +86,27 @@ const Country = () => {
                 {item.borders && (
                   <>
                     {" "}
-                    <h3 className=" text-[#d1d5db]  px-10 font-bold text-lg md:px-0 lg:px-0">
+                    <h3 className=" dark:text-[#d1d5db]  px-10 font-bold text-lg md:px-0 lg:px-0">
                       Border Countries:{" "}
                     </h3>
                     <ul className="text-[#d1d5db] flex gap-4 mt-2 text-center justify-center md:px-0 lg:px-0">
-                      {item.borders.map((border, index) => (
-                        <li
-                          className="bg-slate-700 py-2 px-4 mt-2 rounded-lg"
-                          key={index}
-                        >
-                          {border}
-                        </li>
-                      ))}
+                      {item.borders.map((border, index) =>
+                        border === 1 ? (
+                          <h1
+                            key={index}
+                            className="bg-slate-600 flex text-right"
+                          >
+                            {border}
+                          </h1>
+                        ) : (
+                          <li
+                            className=" bg-[#d1d5db] text-sm p-3 mt-1 rounded-lg dark:bg-slate-700  "
+                            key={index}
+                          >
+                            {border}
+                          </li>
+                        )
+                      )}
                     </ul>
                   </>
                 )}
